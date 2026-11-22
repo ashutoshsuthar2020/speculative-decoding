@@ -1,0 +1,118 @@
+{
+  "config": {
+    "target": "Qwen/Qwen2.5-1.5B-Instruct",
+    "draft": "Qwen/Qwen2.5-0.5B-Instruct",
+    "ks": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "max_new": 256,
+    "temperature": 0.0,
+    "device": "mps",
+    "dtype": "torch.float16",
+    "out": "results.json"
+  },
+  "workloads": {
+    "code": {
+      "baseline_tokens_per_s": 41.102601942877406,
+      "by_k": {
+        "2": {
+          "tokens_per_s": 39.860007507856146,
+          "speedup": 0.9697684726444286,
+          "acceptance_rate": 0.872113676731794,
+          "mean_accepted_per_round": 1.744227353463588,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "4": {
+          "tokens_per_s": 40.54638284928059,
+          "speedup": 0.9864675454276636,
+          "acceptance_rate": 0.8116438356164384,
+          "mean_accepted_per_round": 3.2465753424657535,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "6": {
+          "tokens_per_s": 43.51851285198585,
+          "speedup": 1.058777566258846,
+          "acceptance_rate": 0.7364475201845444,
+          "mean_accepted_per_round": 4.418685121107266,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "8": {
+          "tokens_per_s": 42.97618683707881,
+          "speedup": 1.0455831213995948,
+          "acceptance_rate": 0.6932773109243697,
+          "mean_accepted_per_round": 5.546218487394958,
+          "identical_to_baseline_frac": 0.6666666666666666
+        }
+      }
+    },
+    "factual_qa": {
+      "baseline_tokens_per_s": 38.307360138298314,
+      "by_k": {
+        "2": {
+          "tokens_per_s": 37.09968921294253,
+          "speedup": 0.9684741803925977,
+          "acceptance_rate": 0.7025089605734767,
+          "mean_accepted_per_round": 1.4050179211469533,
+          "identical_to_baseline_frac": 0.6666666666666666
+        },
+        "4": {
+          "tokens_per_s": 35.908299703998864,
+          "speedup": 0.9373733813648788,
+          "acceptance_rate": 0.5821078431372549,
+          "mean_accepted_per_round": 2.3284313725490198,
+          "identical_to_baseline_frac": 0.6666666666666666
+        },
+        "6": {
+          "tokens_per_s": 29.7189486377466,
+          "speedup": 0.7758025750261676,
+          "acceptance_rate": 0.46574074074074073,
+          "mean_accepted_per_round": 2.7944444444444443,
+          "identical_to_baseline_frac": 0.6666666666666666
+        },
+        "8": {
+          "tokens_per_s": 28.58091802155509,
+          "speedup": 0.7460946908993846,
+          "acceptance_rate": 0.3786127167630058,
+          "mean_accepted_per_round": 3.0289017341040463,
+          "identical_to_baseline_frac": 0.8333333333333334
+        }
+      }
+    },
+    "creative": {
+      "baseline_tokens_per_s": 39.28828291559802,
+      "by_k": {
+        "2": {
+          "tokens_per_s": 32.54713669721214,
+          "speedup": 0.8284184057402635,
+          "acceptance_rate": 0.5895061728395061,
+          "mean_accepted_per_round": 1.1790123456790123,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "4": {
+          "tokens_per_s": 29.39415174576896,
+          "speedup": 0.7481658541534034,
+          "acceptance_rate": 0.43333333333333335,
+          "mean_accepted_per_round": 1.7333333333333334,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "6": {
+          "tokens_per_s": 24.04176716677642,
+          "speedup": 0.6119322450010023,
+          "acceptance_rate": 0.3356676003734827,
+          "mean_accepted_per_round": 2.0140056022408963,
+          "identical_to_baseline_frac": 0.8333333333333334
+        },
+        "8": {
+          "tokens_per_s": 19.98755805329334,
+          "speedup": 0.5087409418281803,
+          "acceptance_rate": 0.2886085626911315,
+          "mean_accepted_per_round": 2.308868501529052,
+          "identical_to_baseline_frac": 1.0
+        }
+      }
+    }
+  }
+}
